@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Diventa Tester / Become a Tester — Le Tavole di Ashan</title>
+  <meta name="description" content="Programma tester per Le Tavole di Ashan — Tester program for Le Tavole di Ashan.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tester-page { padding-top: 8rem; padding-bottom: 6rem; }
+
+    .tester-page h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+    .tester-page .subtitle {
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      font-size: 1.1rem;
+    }
+    .tester-divider {
+      width: 60px; height: 1px;
+      background: var(--gold-dim);
+      margin: 0 0 2.5rem;
+    }
+
+    .lang-toggle {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+    }
+    .lang-btn {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.25rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-btn.active {
+      color: var(--gold);
+      border-color: var(--gold-dim);
+    }
+    .lang-btn:hover { color: var(--gold); }
+
+    .warning-box {
+      border: 1px solid var(--gold-dim);
+      background: var(--bg-card);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .warning-box .warning-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal-bright);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .warning-box p { color: var(--text-main); font-size: 0.95rem; margin: 0; }
+
+    .tester-page .intro { color: var(--text-muted); margin-bottom: 3rem; font-size: 1.05rem; }
+
+    .step-card {
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .step-card .step-number {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--teal-bright);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .step-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+    .step-card p { color: var(--text-muted); margin-bottom: 1rem; }
+    .step-card p:last-of-type { margin-bottom: 0; }
+    .step-card ul { padding-left: 1.25rem; margin: 0.75rem 0 1rem; }
+    .step-card li { color: var(--text-muted); margin-bottom: 0.5rem; }
+    .step-card .step-link {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--bg-deep);
+      background: var(--gold);
+      padding: 0.65rem 1.5rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .step-card .step-link:hover { background: #e0be5e; }
+
+    .faq-block { margin-top: 3rem; }
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-item h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+    .faq-item p { color: var(--text-muted); margin: 0; }
+
+    .closing-line {
+      margin-top: 3rem;
+      font-style: italic;
+      color: var(--text-muted);
+      border-left: 2px solid var(--gold-dim);
+      padding-left: 1.5rem;
+    }
+
+    #lang-en { display: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Le Tavole di Ashan</a>
+  <ul class="nav-links">
+    <li><a href="index.html#lore">The Story</a></li>
+    <li><a href="index.html#screenshots">Gallery</a></li>
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+  </ul>
+</nav>
+
+<div class="tester-page">
+  <div class="container-narrow">
+
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="it" onclick="setTesterLang('it')">Italiano</button>
+      <button type="button" class="lang-btn" data-lang="en" onclick="setTesterLang('en')">English</button>
+    </div>
+
+    <div id="lang-it">
+      <h1>Diventa Tester</h1>
+      <p class="subtitle">Le Tavole di Ashan ha bisogno di occhi che la mettano alla prova prima di arrivare sul Play Store.</p>
+      <div class="tester-divider"></div>
+
+      <div class="warning-box">
+        <span class="warning-label">⚠ Prima di iniziare</span>
+        <p>Assicurati di essere loggato — sia nel browser che nell'app Google Play Store — con l'account Google che vuoi usare per il test. Se ne hai più di uno, i link qui sotto funzionano solo con l'account attivo in quel momento.</p>
+      </div>
+
+      <p class="intro">Bastano quattro passaggi e qualche minuto ogni tanto, per 14 giorni. Ecco come partecipare.</p>
+
+      <div class="step-card">
+        <span class="step-number">Passo 1</span>
+        <h3>Iscriviti al gruppo tester</h3>
+        <p>Iscriviti al Google Group con lo stesso account Google che userai per il Play Store.</p>
+        <a class="step-link" href="https://groups.google.com/g/le-tavole-di-ashan-tester" target="_blank" rel="noopener">Vai al gruppo tester →</a>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Passo 2</span>
+        <h3>Attiva il test su Google Play</h3>
+        <p>Fai l'opt-in al programma di test. Serve per sbloccare l'accesso alla versione in prova.</p>
+        <a class="step-link" href="https://play.google.com/apps/testing/it.percystudio.letavolediashan" target="_blank" rel="noopener">Attiva il test →</a>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Passo 3</span>
+        <h3>Installa il gioco</h3>
+        <p>Scarica Le Tavole di Ashan dal Play Store, come qualsiasi altra app.</p>
+        <a class="step-link" href="https://play.google.com/store/apps/details?id=it.percystudio.letavolediashan" target="_blank" rel="noopener">Apri la scheda su Google Play →</a>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Passo 4</span>
+        <h3>Gioca e fai sapere com'è andata</h3>
+        <p>Durante i 14 giorni:</p>
+        <ul>
+          <li>Apri l'app in almeno 3-4 giornate diverse (non serve tutti i giorni)</li>
+          <li>Ogni volta, completa almeno 2-3 livelli — non solo aprire e chiudere</li>
+          <li>Manda un feedback, anche minimo, a <strong>percystudio.dev@gmail.com</strong> ("funziona tutto, nessun crash" va benissimo, ma segnala pure bug o impressioni)</li>
+        </ul>
+      </div>
+
+      <div class="faq-block">
+        <div class="faq-item">
+          <h3>Costa qualcosa?</h3>
+          <p>No, è gratis e resterà gratis per te come tester.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Quanto dura?</h3>
+          <p>14 giorni consecutivi di opt-in attivo.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Cosa succede se disinstallo?</h3>
+          <p>Nessun problema, conta comunque ai fini del test.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Perché è così importante?</h3>
+          <p>Senza 12 tester per 14 giorni, il gioco non può uscire in pubblico sul Play Store.</p>
+        </div>
+      </div>
+
+      <p class="closing-line">Grazie — ogni tavola ricomposta, ogni bug segnalato, ci avvicina all'uscita.</p>
+    </div>
+
+    <div id="lang-en">
+      <h1>Become a Tester</h1>
+      <p class="subtitle">Le Tavole di Ashan needs eyes on it before it can go live on the Play Store.</p>
+      <div class="tester-divider"></div>
+
+      <div class="warning-box">
+        <span class="warning-label">⚠ Before you start</span>
+        <p>Make sure you're signed in — in your browser and in the Google Play Store app — with the Google account you want to use for testing. If you have more than one account, the links below only work with the account active at the time you click.</p>
+      </div>
+
+      <p class="intro">Four steps, a few minutes here and there, for 14 days. Here's how to join.</p>
+
+      <div class="step-card">
+        <span class="step-number">Step 1</span>
+        <h3>Join the tester group</h3>
+        <p>Join the Google Group with the same Google account you'll use on the Play Store.</p>
+        <a class="step-link" href="https://groups.google.com/g/le-tavole-di-ashan-tester" target="_blank" rel="noopener">Go to the tester group →</a>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Step 2</span>
+        <h3>Opt in on Google Play</h3>
+        <p>Opt in to the testing program. This unlocks access to the test version.</p>
+        <a class="step-link" href="https://play.google.com/apps/testing/it.percystudio.letavolediashan" target="_blank" rel="noopener">Activate testing →</a>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Step 3</span>
+        <h3>Install the game</h3>
+        <p>Download Le Tavole di Ashan from the Play Store, like any other app.</p>
+        <a class="step-link" href="https://play.google.com/store/apps/details?id=it.percystudio.letavolediashan" target="_blank" rel="noopener">Open the Play Store listing →</a>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">Step 4</span>
+        <h3>Play, and tell us how it went</h3>
+        <p>Over the 14 days:</p>
+        <ul>
+          <li>Open the app on at least 3-4 different days (no need to play every day)</li>
+          <li>Each time, complete at least 2-3 levels — not just open and close it</li>
+          <li>Send a bit of feedback, even minimal, to <strong>percystudio.dev@gmail.com</strong> ("works fine, no crashes" is perfectly fine, but bugs or impressions are welcome too)</li>
+        </ul>
+      </div>
+
+      <div class="faq-block">
+        <div class="faq-item">
+          <h3>Does it cost anything?</h3>
+          <p>No, it's free and will stay free for you as a tester.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does it take?</h3>
+          <p>14 consecutive days of active opt-in.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if I uninstall it?</h3>
+          <p>No problem, it still counts toward the test.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Why does this matter so much?</h3>
+          <p>Without 12 testers for 14 days, the game can't be released publicly on the Play Store.</p>
+        </div>
+      </div>
+
+      <p class="closing-line">Thank you — every tablet reassembled, every bug reported, brings us closer to release.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p class="footer-logo">Percy Studio</p>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Percy Studio. Le Tavole di Ashan.</p>
+</footer>
+
+<script>
+  function setTesterLang(lang) {
+    document.getElementById('lang-it').style.display = lang === 'it' ? 'block' : 'none';
+    document.getElementById('lang-en').style.display = lang === 'en' ? 'block' : 'none';
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+</script>
+
+</body>
+</html>
