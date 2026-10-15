@@ -1,35 +1,28 @@
-# Le Tavole di Ashan — Site
+# Percy Studio — sito
 
-Marketing website and privacy policy for Le Tavole di Ashan by Percy Studio.
+Sito di Percy Studio (https://www.percystudio.it), con la pagina di *Le Tavole di Ashan*, la privacy policy e la pagina tester. Italiano e inglese. Statico, servito da GitHub Pages dal ramo `main`.
 
-Live at: https://teologoeretico1975.github.io/LeTavoleDiAshanSite/
-
-## Structure
+## Struttura
 
 ```
-index.html          Homepage
-privacy.html        Privacy Policy
-style.css           Shared styles
-assets/
-  images/
-    screenshot_menu.png
-    screenshot_gameplay_3x3.png
-    screenshot_gameplay_4x4.png
-    screenshot_complete.png
+index.html            Home dello studio (IT)
+en/index.html         Home dello studio (EN)
+ashan/index.html      Le Tavole di Ashan (IT)
+en/ashan/index.html   Le Tavole di Ashan (EN)
+privacy.html          Privacy policy (IT + EN, stesso URL)
+tester.html           Programma tester (IT + EN, noindex)
+css/studio.css        Stile dello studio (chiaro/scuro automatico)
+css/ashan.css         Stile del gioco, privacy e tester (scuro)
+js/                   board.js (scacchiera in home), lang.js, contact.js
+assets/images/        hero.jpg, og.jpg, screenshot_*.webp
 ```
 
-## Images needed
+`privacy.html` e `tester.html` restano agli stessi indirizzi di prima: il primo è l'URL registrato nella scheda Google Play, il secondo è nelle istruzioni ai tester.
 
-Place the following screenshots in `assets/images/`:
+## Email
 
-- `screenshot_menu.png` — Main menu with scriptorium background
-- `screenshot_gameplay_3x3.png` — 3x3 gameplay (Chapter I)
-- `screenshot_gameplay_4x4.png` — 4x4 gameplay with spiral symbol (Chapter V)
-- `screenshot_complete.png` — Level complete screen
-- `hero.jpg` — Hero background (can reuse main menu screenshot)
-- `og.jpg` — Open Graph image for social sharing (1200x630)
+L'indirizzo non è scritto in chiaro nell'HTML: compare al clic su "Mostra email" (`js/contact.js`, con i valori in `data-u` e `data-d`).
 
-## Deployment
+## Dominio
 
-GitHub Pages serves automatically from the `main` branch root.
-Custom domain: add `percystudio.it` in repository Settings → Pages → Custom domain.
+Dominio personalizzato in `CNAME`. Impostazioni: Settings → Pages.

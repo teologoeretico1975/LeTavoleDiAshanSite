@@ -1,0 +1,267 @@
+/* Percy Studio: pagine dello studio.
+   Concetto: la tessera vuota dei puzzle a scorrimento come marchio.
+   Layout: testo allineato a sinistra, una sola cosa interattiva (la scacchiera) in apertura. */
+
+:root {
+  --ground: #E3E7E4;
+  --ink: #12201E;
+  --muted: #475754;
+  --teal: #0E6A62;
+  --tile: #F4F6F3;
+  --tile-edge: #A9B5B0;
+  --line: #BAC5C0;
+  --on-teal: #F4F6F3;
+  --font-display: 'Familjen Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0F1B19;
+    --ink: #DDE6E2;
+    --muted: #9DB0AA;
+    --teal: #5CC9B8;
+    --tile: #1B2D2A;
+    --tile-edge: #31483F;
+    --line: #27403A;
+    --on-teal: #0F1B19;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground: #0F1B19;
+  --ink: #DDE6E2;
+  --muted: #9DB0AA;
+  --teal: #5CC9B8;
+  --tile: #1B2D2A;
+  --tile-edge: #31483F;
+  --line: #27403A;
+  --on-teal: #0F1B19;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+a { color: var(--teal); text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+
+.wrap { max-width: 68rem; margin: 0 auto; }
+
+/* Intestazione */
+.site-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding-block: 1.5rem;
+}
+
+.mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+.mark svg { width: 1.6rem; height: 1.6rem; display: block; }
+
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.75rem; align-items: center; font-family: var(--font-display); font-size: 1rem; }
+.site-nav a { color: var(--ink); text-decoration: none; }
+.site-nav a:hover { color: var(--teal); text-decoration: underline; }
+.site-nav .lang { color: var(--muted); }
+
+/* Apertura */
+.opening {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 3rem 4rem;
+  align-items: center;
+  padding-block: 3rem 5rem;
+}
+
+.opening h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.5rem;
+  text-wrap: balance;
+}
+
+.opening .lead { font-size: 1.25rem; max-width: 34rem; color: var(--muted); margin: 0; }
+
+/* Scacchiera interattiva */
+.board-wrap { justify-self: end; width: min(100%, 26rem); }
+
+.board {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.cell {
+  position: absolute;
+  width: 33.3333%;
+  height: 33.3333%;
+  padding: 4px;
+}
+.cell::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed var(--line);
+  border-radius: 3px;
+}
+
+.tile {
+  position: absolute;
+  width: 33.3333%;
+  height: 33.3333%;
+  left: calc(var(--c) * 33.3333%);
+  top: calc(var(--r) * 33.3333%);
+  padding: 4px;
+  transition: left 0.18s ease, top 0.18s ease;
+}
+.tile button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: var(--tile);
+  border: 1px solid var(--tile-edge);
+  border-radius: 3px;
+  box-shadow: 0 2px 0 var(--tile-edge);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.tile button:hover { border-color: var(--teal); }
+.tile svg { display: block; width: 100%; height: 100%; }
+
+.board.solved .tile button { border-color: var(--teal); box-shadow: 0 2px 0 var(--teal); }
+
+.board-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1.1rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+.board-tools button {
+  font: inherit;
+  color: var(--on-teal);
+  background: var(--teal);
+  border: 0;
+  border-radius: 3px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+}
+.board-tools button:hover { filter: brightness(1.08); }
+.board-status { color: var(--muted); margin: 0; }
+
+/* Sezioni */
+.block { padding-block: 4rem; border-top: 1px solid var(--line); }
+.block > .wrap > h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin: 0 0 2rem;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.5rem 4rem;
+  align-items: start;
+}
+.game figure { margin: 0; }
+.game img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 2px; }
+.game h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.7rem; letter-spacing: -0.015em; line-height: 1.15; margin: 0 0 1rem; }
+.game p { margin: 0 0 1.5rem; max-width: 36rem; }
+
+.facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.4rem 1.5rem; margin: 0 0 2rem; font-size: 1rem; }
+.facts dt { font-family: var(--font-display); font-weight: 600; }
+.facts dd { margin: 0; color: var(--muted); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; font-family: var(--font-display); }
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 3px;
+  border: 1px solid var(--teal);
+  background: var(--teal);
+  color: var(--on-teal);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.btn:hover { filter: brightness(1.08); text-decoration: none; }
+.btn.quiet { background: transparent; color: var(--teal); }
+.btn.quiet:hover { background: color-mix(in srgb, var(--teal) 12%, transparent); filter: none; }
+
+.soon {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px dashed var(--tile-edge);
+  border-radius: 3px;
+}
+.soon svg { flex: none; width: 3.5rem; height: 3.5rem; }
+.soon h3 { font-family: var(--font-display); font-size: 1.2rem; margin: 0 0 0.25rem; }
+.soon p { margin: 0; color: var(--muted); }
+
+.contact p { margin: 0 0 0.5rem; max-width: 36rem; }
+.mail-reveal a { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; user-select: all; }
+button.btn { font-family: var(--font-display); cursor: pointer; }
+
+.site-foot {
+  border-top: 1px solid var(--line);
+  padding-block: 2rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.site-foot a { color: var(--muted); }
+.site-foot a:hover { color: var(--teal); }
+.site-foot ul { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; list-style: none; margin: 0; padding: 0; }
+
+@media (max-width: 760px) {
+  .opening { grid-template-columns: minmax(0, 1fr); padding-block: 1.5rem 3.5rem; }
+  .board-wrap { justify-self: start; }
+  .game { grid-template-columns: minmax(0, 1fr); }
+  .block { padding-block: 3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile { transition: none; }
+}

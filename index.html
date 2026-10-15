@@ -1,161 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Le Tavole di Ashan — Reassemble the tablets. Unveil the truth.</title>
-  <meta name="description" content="A dark fantasy sliding puzzle game. Reassemble the ancient tablets of Ashan and uncover the fate of Brother Sybelius, a medieval monk who should never have opened those crates.">
-  <meta property="og:title" content="Le Tavole di Ashan">
-  <meta property="og:description" content="Reassemble the tablets. Unveil the truth.">
-  <meta property="og:image" content="assets/images/og.jpg">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Percy Studio</title>
+  <meta name="description" content="Percy Studio è uno studio indipendente italiano che crea giochi di logica. Il primo è Le Tavole di Ashan, un puzzle a scorrimento per Android.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Percy Studio">
+  <meta property="og:description" content="Percy Studio è uno studio indipendente italiano che crea giochi di logica. Il primo è Le Tavole di Ashan, un puzzle a scorrimento per Android.">
+  <meta property="og:image" content="https://www.percystudio.it/assets/images/og.jpg">
+  <link rel="alternate" hreflang="it" href="https://www.percystudio.it/">
+  <link rel="alternate" hreflang="en" href="https://www.percystudio.it/en/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="css/studio.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><g id="monogram"><path fill-rule="evenodd" style="fill:var(--teal)" d="M50 40H190A65 65 0 0 1 190 170H120V260H50Z M120 85H190A20 20 0 0 1 190 125H120Z"/></g></defs></svg>
+<div class="wrap">
+  <header class="site-head">
+    <a class="mark" href="./"><svg viewBox="0 0 30 30" aria-hidden="true" focusable="false"><g fill="currentColor"><rect x="0" y="0" width="8" height="8"/><rect x="11" y="0" width="8" height="8"/><rect x="22" y="0" width="8" height="8"/><rect x="0" y="11" width="8" height="8"/><rect x="11" y="11" width="8" height="8"/><rect x="22" y="11" width="8" height="8"/><rect x="0" y="22" width="8" height="8"/></g><rect x="11" y="22" width="8" height="8" style="fill:var(--teal)"/><rect x="22.5" y="22.5" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 1.6"/></svg><span>Percy Studio</span></a>
+    <nav class="site-nav" aria-label="Principale">
+      <a href="#giochi">Giochi</a>
+      <a href="#contatti">Contatti</a>
+      <a class="lang" href="en/" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
 
-<nav>
-  <a class="nav-logo" href="#">Le Tavole di Ashan</a>
-  <ul class="nav-links">
-    <li><a href="#lore">The Story</a></li>
-    <li><a href="#screenshots">Gallery</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="privacy.html">Privacy</a></li>
-  </ul>
-</nav>
+  <main>
+    <section class="opening">
+      <div>
+        <h1>Giochi di logica con una storia dentro.</h1>
+        <p class="lead">Percy Studio è uno studio indipendente italiano. Il nostro primo gioco è un puzzle a scorrimento ambientato in un archivio medievale.</p>
+      </div>
+      <div class="board-wrap">
+        <div class="board" id="board" role="group" aria-label="Scacchiera di prova: sposta le tessere per ricomporre la P" data-tile-label="Tessera" data-msg-start="Una mossa e il monogramma è completo." data-msg-play="Rimetti le tessere in ordine." data-msg-solved="Ricomposto."></div>
+        <div class="board-tools">
+          <button type="button" id="board-shuffle">Mescola</button>
+          <p class="board-status" id="board-status" role="status"></p>
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Percy Studio</p>
-    <h1 class="hero-title">Le Tavole<br>di Ashan</h1>
-    <p class="hero-tagline">Reassemble the tablets. Unveil the truth.</p>
-    <a href="#" class="hero-cta">Coming soon on Google Play</a>
-  </div>
-  <p class="hero-scroll">Scroll to discover</p>
-</section>
+    <section class="block" id="giochi">
+      <div class="wrap">
+        <h2>I giochi</h2>
+        <div class="game">
+          <figure><img src="assets/images/hero.jpg" alt="Lo scriptorium del monastero, con casse aperte che mostrano tavole di pietra incise" width="1600" height="900" loading="lazy"></figure>
+          <div>
+            <h3>Le Tavole di Ashan</h3>
+            <p>Centoundici tavole di pietra, un archivio e il diario di un monaco che non avrebbe dovuto aprire quelle casse. Un puzzle a scorrimento in sei capitoli, con una storia che si scopre un frammento alla volta.</p>
+            <dl class="facts"><dt>Piattaforma</dt><dd>Android</dd><dt>Prezzo</dt><dd>Gratuito, senza pubblicità né acquisti</dd><dt>Lingue</dt><dd>Italiano, inglese, spagnolo</dd><dt>Stato</dt><dd>In test chiuso, in arrivo su Google Play</dd></dl>
+            <div class="actions">
+              <a class="btn" href="ashan/">Scopri il gioco</a>
+              <a class="btn quiet" href="tester.html">Diventa tester</a>
+            </div>
+          </div>
+        </div>
+        <div class="soon">
+          <svg viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="var(--tile-edge)" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
+          <div><h3>Altri giochi in arrivo</h3><p>Ci stiamo lavorando. Quando saranno pronti li troverai qui.</p></div>
+        </div>
+      </div>
+    </section>
 
-<section class="lore" id="lore">
-  <div class="container">
-    <div class="lore-grid">
-      <div class="lore-text">
-        <p class="section-eyebrow">The Story</p>
-        <h2 class="section-title">The Scriptorium of Sant'Anselmo</h2>
-        <div class="section-divider"></div>
-        <p>In the year of our Lord 1247, eighteen crates arrived at the monastery of Sant'Anselmo di Verdamacht, sealed with black wax. Brother Sybelius was tasked with cataloguing their contents.</p>
-        <p>One hundred and eleven stone tablets, covered in signs belonging to no known alphabet. Sybelius began his work with a tranquil spirit.</p>
-        <p>He should have left them sealed.</p>
-        <blockquote class="lore-quote">
-          "I have lost count of the days. My notebook records dates that do not correspond to those of the cloister calendar. One of the two is wrong. I prefer not to know which."
-        </blockquote>
-        <p>As you reassemble each tablet, a fragment of his diary is revealed. One hundred and eleven puzzles. One hundred and eleven confessions.</p>
+    <section class="block contact" id="contatti">
+      <div class="wrap">
+        <h2>Contatti</h2>
+        <p>Per domande, segnalazioni o collaborazioni scrivi a:</p>
+        <p><span class="mail-reveal" data-mail data-u="percystudio.dev" data-d="gmail.com"><button type="button" class="btn quiet mail-btn">Mostra email</button><noscript>percystudio.dev [chiocciola] gmail.com</noscript></span></p>
       </div>
-      <div class="lore-image">
-        <img src="assets/images/screenshot_menu.png" alt="Le Tavole di Ashan — main menu showing the scriptorium">
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
-<section class="screenshots" id="screenshots">
-  <div class="container">
-    <div class="screenshots-header">
-      <p class="section-eyebrow">Gallery</p>
-      <h2 class="section-title">The Tablets Await</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="screenshots-grid">
-      <div class="screenshot-item">
-        <img src="assets/images/screenshot_gameplay_3x3.png" alt="3x3 puzzle gameplay">
-        <span class="screenshot-caption">Chapter I — The Tablets</span>
-      </div>
-      <div class="screenshot-item">
-        <img src="assets/images/screenshot_gameplay_4x4.png" alt="4x4 puzzle gameplay with spiral symbol">
-        <span class="screenshot-caption">Chapter V — The Abyss</span>
-      </div>
-      <div class="screenshot-item">
-        <img src="assets/images/screenshot_complete.png" alt="Level complete screen">
-        <span class="screenshot-caption">Stars and secrets</span>
-      </div>
-      <div class="screenshot-item">
-        <img src="assets/images/screenshot_menu.png" alt="Main menu">
-        <span class="screenshot-caption">The scriptorium</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="features" id="features">
-  <div class="container">
-    <div class="features-header">
-      <p class="section-eyebrow">Features</p>
-      <h2 class="section-title">What Awaits You</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">I</div>
-        <h3 class="feature-title">111 Levels</h3>
-        <p class="feature-desc">Six chapters of increasing darkness, from the ordered calm of the scriptorium to the geometric impossibility of the Abyss.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">II</div>
-        <h3 class="feature-title">A True Narrative</h3>
-        <p class="feature-desc">Each solved puzzle unlocks a fragment of Brother Sybelius's diary. Read as you play. Dread as you read.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">III</div>
-        <h3 class="feature-title">Ancient Symbols</h3>
-        <p class="feature-desc">Each chapter reveals a different cosmic symbol across the tablet fragments. Reassemble the pieces. Reveal what should not be seen.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">IV</div>
-        <h3 class="feature-title">Daily Puzzle</h3>
-        <p class="feature-desc">A new enigma every day, free for all. A reason to return. A ritual Sybelius himself could not escape.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">V</div>
-        <h3 class="feature-title">Three Languages</h3>
-        <p class="feature-desc">Full Italian, English, and Spanish localisation — including all 111 diary fragments, translated with care.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">VI</div>
-        <h3 class="feature-title">Dark Atmosphere</h3>
-        <p class="feature-desc">Original haunted music, ambient soundscapes, and a visual design that deepens as Sybelius's grip on reality loosens.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="diary">
-  <div class="container">
-    <div class="diary-fragment">
-      <p class="diary-attribution">From the Diary of Brother Sybelius — Level 111</p>
-      <p class="diary-text">"The last tablet is in its place. The order is complete. Ashan is"</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <div class="container-narrow">
-    <p class="section-eyebrow">Percy Studio</p>
-    <h2 class="section-title">Coming to Google Play</h2>
-    <div class="section-divider"></div>
-    <p>Free to play. The first two chapters await anyone willing to look. The rest — for those who must know how it ends.</p>
-    <a href="#" class="cta-button">Get notified</a>
-    <a href="privacy.html" class="cta-button secondary">Privacy policy</a>
-  </div>
-</section>
-
-<footer>
-  <p class="footer-logo">Percy Studio</p>
-  <ul class="footer-links">
-    <li><a href="#lore">The Story</a></li>
-    <li><a href="#screenshots">Gallery</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="privacy.html">Privacy Policy</a></li>
-  </ul>
-  <p class="footer-copy">© 2026 Percy Studio. Le Tavole di Ashan.</p>
-</footer>
-
+  <footer class="site-foot">
+    <span>© 2026 Percy Studio</span>
+    <ul><li><a href="privacy.html">Privacy</a></li><li><a href="tester.html">Diventa tester</a></li></ul>
+  </footer>
+</div>
+<script src="js/board.js"></script>
+<script src="js/contact.js"></script>
 </body>
 </html>

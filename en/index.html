@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Percy Studio</title>
+  <meta name="description" content="Percy Studio is an independent Italian studio making logic games. The first is The Tablets of Ashan, a sliding puzzle for Android.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Percy Studio">
+  <meta property="og:description" content="Percy Studio is an independent Italian studio making logic games. The first is The Tablets of Ashan, a sliding puzzle for Android.">
+  <meta property="og:image" content="https://www.percystudio.it/assets/images/og.jpg">
+  <link rel="alternate" hreflang="it" href="https://www.percystudio.it/">
+  <link rel="alternate" hreflang="en" href="https://www.percystudio.it/en/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="../css/studio.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><g id="monogram"><path fill-rule="evenodd" style="fill:var(--teal)" d="M50 40H190A65 65 0 0 1 190 170H120V260H50Z M120 85H190A20 20 0 0 1 190 125H120Z"/></g></defs></svg>
+<div class="wrap">
+  <header class="site-head">
+    <a class="mark" href="./"><svg viewBox="0 0 30 30" aria-hidden="true" focusable="false"><g fill="currentColor"><rect x="0" y="0" width="8" height="8"/><rect x="11" y="0" width="8" height="8"/><rect x="22" y="0" width="8" height="8"/><rect x="0" y="11" width="8" height="8"/><rect x="11" y="11" width="8" height="8"/><rect x="22" y="11" width="8" height="8"/><rect x="0" y="22" width="8" height="8"/></g><rect x="11" y="22" width="8" height="8" style="fill:var(--teal)"/><rect x="22.5" y="22.5" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 1.6"/></svg><span>Percy Studio</span></a>
+    <nav class="site-nav" aria-label="Principale">
+      <a href="#giochi">Games</a>
+      <a href="#contatti">Contact</a>
+      <a class="lang" href="../" hreflang="it" lang="it">Italiano</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="opening">
+      <div>
+        <h1>Logic games with a story inside.</h1>
+        <p class="lead">Percy Studio is an independent studio from Italy. Our first game is a sliding puzzle set in a medieval archive.</p>
+      </div>
+      <div class="board-wrap">
+        <div class="board" id="board" role="group" aria-label="Sample board: slide the tiles to rebuild the P" data-tile-label="Tile" data-msg-start="One move and the monogram is complete." data-msg-play="Put the tiles back in order." data-msg-solved="Rebuilt."></div>
+        <div class="board-tools">
+          <button type="button" id="board-shuffle">Shuffle</button>
+          <p class="board-status" id="board-status" role="status"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="giochi">
+      <div class="wrap">
+        <h2>Games</h2>
+        <div class="game">
+          <figure><img src="../assets/images/hero.jpg" alt="The monastery scriptorium, with open crates showing carved stone tablets" width="1600" height="900" loading="lazy"></figure>
+          <div>
+            <h3>Le Tavole di Ashan</h3>
+            <p>One hundred and eleven stone tablets, an archive, and the diary of a monk who should never have opened those crates. A sliding puzzle in six chapters, with a story you uncover one fragment at a time.</p>
+            <dl class="facts"><dt>Platform</dt><dd>Android</dd><dt>Price</dt><dd>Free, no ads, no purchases</dd><dt>Languages</dt><dd>Italian, English, Spanish</dd><dt>Status</dt><dd>In closed testing, coming to Google Play</dd></dl>
+            <div class="actions">
+              <a class="btn" href="ashan/">About the game</a>
+              <a class="btn quiet" href="../tester.html#en">Become a tester</a>
+            </div>
+          </div>
+        </div>
+        <div class="soon">
+          <svg viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect x="1" y="1" width="28" height="28" rx="2" fill="none" stroke="var(--tile-edge)" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
+          <div><h3>More games on the way</h3><p>We are working on them. When they are ready you will find them here.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block contact" id="contatti">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>For questions, bug reports or collaborations, write to:</p>
+        <p><span class="mail-reveal" data-mail data-u="percystudio.dev" data-d="gmail.com"><button type="button" class="btn quiet mail-btn">Show email</button><noscript>percystudio.dev [at] gmail.com</noscript></span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <span>© 2026 Percy Studio</span>
+    <ul><li><a href="../privacy.html#en">Privacy</a></li><li><a href="../tester.html#en">Become a tester</a></li></ul>
+  </footer>
+</div>
+<script src="../js/board.js"></script>
+<script src="../js/contact.js"></script>
+</body>
+</html>
