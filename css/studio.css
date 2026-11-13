@@ -204,6 +204,13 @@ a:hover { text-decoration-thickness: 2px; }
 .game h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.7rem; letter-spacing: -0.015em; line-height: 1.15; margin: 0 0 1rem; }
 .game p { margin: 0 0 1.5rem; max-width: 36rem; }
 
+.game + .game { margin-top: 4rem; padding-top: 4rem; border-top: 1px dashed var(--line); }
+.game-title { display: flex; align-items: center; gap: 1rem; margin: 0 0 1rem; }
+.game-title img { flex: none; width: 3.5rem; height: 3.5rem; border-radius: 50%; }
+.game .game-title h3 { margin: 0; }
+.game-title h3 span { display: block; font-size: 1rem; font-weight: 600; color: var(--muted); letter-spacing: 0; margin-top: 0.2rem; }
+.game .ai-note { font-size: 0.95rem; color: var(--muted); margin: -0.75rem 0 1.5rem; }
+
 .facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.4rem 1.5rem; margin: 0 0 2rem; font-size: 1rem; }
 .facts dt { font-family: var(--font-display); font-weight: 600; }
 .facts dd { margin: 0; color: var(--muted); }
