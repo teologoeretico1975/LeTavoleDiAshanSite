@@ -11,6 +11,8 @@ ashan/index.html      Le Tavole di Ashan (IT)
 en/ashan/index.html   Le Tavole di Ashan (EN)
 privacy.html          Privacy policy (IT + EN, stesso URL)
 tester.html           Programma tester (IT + EN, noindex)
+sitemap.xml           Sitemap per i motori di ricerca (da aggiornare a ogni nuova pagina)
+robots.txt            Esclude tester.html e indica la sitemap
 css/studio.css        Stile dello studio (chiaro/scuro automatico)
 css/ashan.css         Stile del gioco, privacy e tester (scuro)
 js/                   board.js (scacchiera in home), lang.js, contact.js

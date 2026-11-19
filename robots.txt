@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /tester.html
+
+Sitemap: https://www.percystudio.it/sitemap.xml
